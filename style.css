@@ -1,0 +1,65 @@
+ 
+ @media screen and (min-width: 1000px) { 
+    
+    
+ *{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+.title{
+    height: 100vh;
+    width: 100%;
+    background-image: url(images/title1.png);
+    background-position: center center;
+    background-size: cover;
+    object-fit: cover;
+    display: block;
+
+}
+
+.koronira {
+    height: 30vh;
+}
+
+.rogo img{
+    display: block;
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin: 100px auto;
+    width: 50%;
+}
+
+.moguma img{
+    object-fit: cover;
+    width: 40%;
+    display: block;
+    margin: 50px auto;
+}
+
+.about {
+    height: 100vh;
+}
+
+.about h1{
+    text-align: center;
+    letter-spacing: 1em;
+    font-size: 36px;
+}
+
+.about p{
+    text-align: center;
+    margin: 50px 400px;
+}
+
+footer{
+    background: #000;
+}
+
+footer p {
+    text-align: center;
+    color: #fff;
+}
+}
