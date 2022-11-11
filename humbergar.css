@@ -1,0 +1,123 @@
+
+	::before , ::after {
+		box-sizing: inherit;
+	}
+
+	a{
+		color: #000000;
+	}
+	button {
+		margin: 0;
+		padding: 0;
+		outline: 0;
+		border: 0;
+		border-radius: 0;
+		background: transparent;
+		color: inherit;
+		vertical-align: middle;
+		text-align: inherit;
+		font: inherit;
+		-webkit-appearance: none;
+		appearance: none;
+	}
+	/**************** 以下、ハンバーガーボタンのスタイリング ****************/
+	.btn {
+		/* ボタンの配置位置  */
+		position: fixed;
+		top: 5px;
+		right: 5px;
+		/* 最前面に */
+		z-index: 10;
+		/* ボタンの大きさ  */
+		width: 48px;
+		height: 48px;
+		z-index: 10;
+	}
+	/***** 真ん中のバーガー線 *****/
+	.btn-line {
+		display: block;
+		/* バーガー線の位置基準として設定 */
+		position: relative;
+		/* 線の長さと高さ */
+		width: 100%;
+		height: 7px;
+		/* バーガー線の色 */
+		background-color: #c0c300;
+		transition: .2s;
+	}
+	/***** 上下のバーガー線 *****/
+	.btn-line::before , .btn-line::after {
+		content: "";
+		/* 基準線と同じ大きさと色 */
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: #c0c300;
+		transition: .5s;
+	}
+	.btn-line::before {
+		/* 上の線の位置 */
+		transform: translateY(-16px);
+	}
+	.btn-line::after {
+		/* 下の線の位置 */
+		transform: translateY(16px);
+	}
+	/***** メニューオープン時 *****/
+	.btn-line.open {
+		/* 真ん中の線を透明に */
+		background-color: transparent;
+	}
+	.btn-line.open::before , .btn-line.open::after {
+		content: "";
+		background-color:#c0c300;
+		transition: .2s;
+	}
+	.btn-line.open::before {
+		/* 上の線を傾ける */
+		transform: rotate(45deg);
+	}
+	.btn-line.open::after {
+		/* 上の線を傾ける */
+		transform: rotate(-45deg);
+	}
+	/**************** ここまで、ハンバーガーボタンのスタイリング ****************/
+	/**************** 以下、メニューのスタイリング ****************/
+	.menu-menu {
+		/* メニューを縦に */
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		/* メニューの位置マイナス指定で画面外に */
+		top: -100%;
+		left: 50%;
+		width: 50%;
+		height: 50vh;
+		background-color: rgba(255, 255, 255, 0.8);
+		color: #fff;
+		transition: .3s;
+		/* z-index: 200px; */
+	}
+	
+	.menu-list {
+		/* メニューテキスト位置をリスト内中心に */
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 18%;
+	}
+	.menu-list:hover {
+		background-color: rgb(0, 85, 46, 0.5);
+		color: #fff;
+		cursor: pointer;
+		transition: .3s;
+	}
+	/***** メニューオープン時位置0にして画面内に *****/
+	.menu-menu.open  {
+		position: absolute;
+		top: 0;
+		position: fixed;
+		z-index: 1;
+	}
+

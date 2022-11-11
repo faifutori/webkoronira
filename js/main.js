@@ -6,6 +6,16 @@ $(function(){
         loop: true
     });
 
+    $(window).scroll(function () {
+        var targetElement = $('.fuwa').offset().top;
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        if (scroll > targetElement - windowHeight + 300) {
+            $('.fuwa').css('opacity', '1');
+            $('.fuwa').css('transform','translateY(0)');
+         }
+    });
+
 }); 
 
 
